@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+@import 'tailwindcss';
+
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+@source '../views/**/*.blade.php';
+
+@theme {
+    --font-serif: 'Playfair Display', Georgia, serif;
+    --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+
+    --color-choco-950: #140d0a;
+    --color-choco-900: #211612;
+    --color-choco-800: #33231c;
+    --color-choco-700: #4a342b;
+    --color-choco-600: #6b4d40;
+
+    --color-gold-300: #f1db8b;
+    --color-gold-400: #e2c159;
+    --color-gold-500: #c89e2b;
+    --color-gold-600: #a77f1b;
+    --color-gold-700: #856214;
+
+    --color-cream-50: #fffdfa;
+    --color-cream-100: #fbf7ee;
+    --color-cream-200: #f5eedc;
+    --color-cream-300: #ebe0c6;
+    --color-cream-400: #dac9a3;
+}
+
+/* Custom smooth mobile styles */
+html {
+    scroll-behavior: smooth;
+    -webkit-tap-highlight-color: transparent;
+}
+
+body {
+    font-family: var(--font-sans);
+    background-color: #f7f3ec;
+    color: #211612;
+}
+
+.font-serif-title {
+    font-family: 'Playfair Display', Georgia, serif;
+}
+
+/* Hide scrollbar for clean horizontal pill slider */
+.no-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+
+.no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+/* Mobile viewport container simulator on desktop */
+.app-container {
+    max-width: 480px;
+    margin: 0 auto;
+    min-height: 100vh;
+    background: #fffdfa;
+    box-shadow: 0 20px 45px -10px rgba(33, 22, 18, 0.15);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+@media (min-width: 1024px) {
+    body {
+        background-color: #ede5d8;
+        background-image: radial-gradient(#d8cca6 1px, transparent 1px);
+        background-size: 24px 24px;
+    }
+}
+
+@keyframes loaderProgress {
+    0% {
+        transform: translateX(-100%);
+    }
+
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+.animate-loader-progress {
+    animation: loaderProgress 1.2s ease-in-out infinite;
+}
